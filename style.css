@@ -1,0 +1,17 @@
+.table thead th {
+  border-top: 2px solid black;
+  border-bottom: none;
+}
+
+.table-secondary th, td {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid black;
+}
+
+h1 {
+  margin: 20px 0;
+}

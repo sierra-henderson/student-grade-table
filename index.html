@@ -5,9 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Grade Table</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>Student Grade Table</header>
+  <div class="container">
+    <header>
+      <h1>Student Grade Table</h1>
+    </header>
+    <table class="table table-striped">
+      <thead>
+        <tr class="table-secondary">
+          <th scope="col">Student Name</th>
+          <th scope="col">Course</th>
+          <th scope="col">Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tim Berners-Lee</td>
+          <td>Web Development</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Scott Bowler</td>
+          <td>Web Development</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Tim Davis</td>
+          <td>Web Development</td>
+          <td>50</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script src="main.js"></script>
 </body>
