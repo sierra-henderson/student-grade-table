@@ -3,7 +3,6 @@ class GradeTable {
     this.tableElement = tableElement
   }
   updateGrades(grades) {
-    console.log(grades)
     var tBody = this.tableElement.querySelector('tbody');
     while (tBody.firstChild) {
       tBody.removeChild(tBody.firstChild);
