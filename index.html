@@ -9,12 +9,17 @@
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Student Grade Table</h1>
+    <header class="row border-bottom">
+      <div class="title col">
+        <h1>Student Grade Table</h1>
+      </div>
+      <div class="average col">
+        <h2>Average Grade <span class="badge badge-secondary">84</span></h2>
+      </div>
     </header>
     <table class="table table-striped">
       <thead>
-        <tr class="table-secondary">
+        <tr>
           <th scope="col">Student Name</th>
           <th scope="col">Course</th>
           <th scope="col">Grade</th>
