@@ -26,6 +26,7 @@
               <th scope="col">Student Name</th>
               <th scope="col">Course</th>
               <th scope="col">Grade</th>
+              <th scope="col">Operations</th>
             </tr>
           </thead>
           <tbody>
@@ -33,39 +34,43 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
               <td></td>
             </tr>
             <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
           </tbody>
         </table>
+        <p id="noGrades" class="d-none">No Grades Recorded</p>
       </div>
       <div class="col-sm-4">
         <h4 class="mb-4">Add Grade</h4>
         <form action="" method="post">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
             </div>
             <input type="text" class="form-control" name="Name" placeholder="Student Name" aria-label="Student Name" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon2">@</span>
+              <span class="input-group-text" id="basic-addon2"><i class="far fa-list-alt"></i></span>
             </div>
             <input type="text" class="form-control" name="Course" placeholder="Student Course" aria-label="Student Course"
               aria-describedby="basic-addon2">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon3">@</span>
+              <span class="input-group-text" id="basic-addon3"><i class="fas fa-graduation-cap"></i></span>
             </div>
             <input type="text" class="form-control" name="Grade" placeholder="Student Grade" aria-label="Student Grade"
               aria-describedby="basic-addon3">
