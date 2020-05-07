@@ -11,7 +11,7 @@ class GradeTable {
     grades.forEach(el => this.renderGradeRow(el, this.deleteGrade))
     var noGrades = document.getElementById('noGrades')
     if (grades.length === 0) {
-      noGrades.classList.remove('d-none')
+      noGrades.classList.remove('d-none');
     } else {
       noGrades.className = 'd-none';
     }

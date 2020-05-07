@@ -21,7 +21,10 @@ class App {
     grades.forEach(function(el) {
       total += el.grade;
     })
-    var average = total / grades.length;
+    var average = Math.round(total / grades.length);
+    if (isNaN(average)) {
+      average = "N/A"
+    }
     this.pageHeader.updateAverage(average);
   }
   getGrades() {
