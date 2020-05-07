@@ -9,6 +9,12 @@ class GradeTable {
       tBody.removeChild(tBody.firstChild);
     }
     grades.forEach(el => this.renderGradeRow(el, this.deleteGrade)
+    if (grades.length === 0) {
+      var noGrades = document.getElementById('noGrades')
+      noGrades.classList.remove('d-none')
+    } else {
+      noGrades.className = 'd-none';
+    }
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade
