@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Grade Table</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <header class="row">
+    <header class="row border-bottom">
       <div class="title col">
         <h1>Student Grade Table</h1>
       </div>
@@ -17,37 +18,70 @@
         <h2>Average Grade <span class="badge badge-secondary" id="grade"></span></h2>
       </div>
     </header>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Student Name</th>
-          <th scope="col">Course</th>
-          <th scope="col">Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row">
+      <div class="col-sm-8">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Student Name</th>
+              <th scope="col">Course</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-4">
+        <h4 class="mb-4">Add Grade</h4>
+        <form action="" method="post">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" class="form-control" name="Name" placeholder="Student Name" aria-label="Student Name" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon2">@</span>
+            </div>
+            <input type="text" class="form-control" name="Course" placeholder="Student Course" aria-label="Student Course"
+              aria-describedby="basic-addon2">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">@</span>
+            </div>
+            <input type="text" class="form-control" name="Grade" placeholder="Student Grade" aria-label="Student Grade"
+              aria-describedby="basic-addon3">
+          </div>
+          <button type="submit" class="btn btn-success">Add</button>
+          <button type="reset" class="btn btn-outline-secondary ml-2">Cancel</button>
+        </form>
+      </div>
+    </div>
+
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
   <script src="components/app.js"></script>
   <script src="components/grade-table.js"></script>
   <script src="components/page-header.js"></script>
+  <script src="components/grade-form.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

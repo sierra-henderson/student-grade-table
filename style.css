@@ -8,10 +8,14 @@ header {
   align-items: baseline;
 }
 
+h2, h3 {
+  font-weight: 700;
+}
+
 .average h2 {
   text-align: right;
 }
 
 .table thead th {
-  padding-top: 30px;
+  border-top: none;
 }
