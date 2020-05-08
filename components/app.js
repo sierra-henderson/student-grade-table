@@ -3,6 +3,8 @@ class App {
     this.gradeTable = gradeTable;
     this.pageHeader = pageHeader;
     this.gradeForm = gradeForm;
+    this.gradeArray = null;
+    this.handleAllGradesSuccess = this.handleAllGradesSuccess.bind(this);
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
     this.createGrade = this.createGrade.bind(this);
@@ -20,9 +22,14 @@ class App {
     console.error(error);
   }
   handleGetGradesSuccess(grades) {
+    this.gradeArray = grades;
+    this.handleAllGradesSuccess(grades)
+  }
+
+  handleAllGradesSuccess(grades) {
     this.gradeTable.updateGrades(grades);
     var total = 0;
-    grades.forEach(function(el) {
+    grades.forEach(function (el) {
       total += el.grade;
     })
     var average = Math.round(total / grades.length);
@@ -31,6 +38,7 @@ class App {
     }
     this.pageHeader.updateAverage(average);
   }
+
   getGrades() {
     $.ajax({
       method: "GET",
@@ -70,8 +78,10 @@ class App {
   handleCreateGradeError(error) {
     console.error(error)
   }
-  handleCreateGradeSuccess() {
-    this.getGrades()
+  handleCreateGradeSuccess(grade) {
+    grade.grade = parseInt(grade.grade)
+    this.gradeArray.push(grade)
+    this.handleAllGradesSuccess(this.gradeArray);
   }
   deleteGrade(id) {
     $.ajax({
@@ -85,6 +95,13 @@ class App {
       success: this.handleDeleteGradeSuccess,
       fail: this.handleDeleteGradeError
     })
+    var index;
+    this.gradeArray.forEach((el, i) => {
+      if (el.id === id) {
+        index = i;
+      }
+    })
+    this.gradeArray.splice(index, 1)
   }
 
   handleDeleteGradeError(error) {
@@ -92,7 +109,7 @@ class App {
   }
 
   handleDeleteGradeSuccess() {
-    this.getGrades()
+    this.handleAllGradesSuccess(this.gradeArray);
   }
 
   updateForm(data) {
@@ -130,7 +147,19 @@ class App {
     console.error(error)
   }
 
-  handleUpdateGradeSuccess() {
-    this.getGrades()
+  handleUpdateGradeSuccess(grade) {
+    grade.grade = parseInt(grade.grade)
+    var gradeID = grade.id;
+    var index;
+    console.log(this.gradeArray)
+    this.gradeArray.forEach((el, i) => {
+      if (el.id === grade.id) {
+        index = i;
+        console.log(index)
+      }
+    })
+    this.gradeArray.splice(index, 1, grade)
+    console.log(this.gradeArray)
+    this.handleAllGradesSuccess(this.gradeArray);
   }
 }
