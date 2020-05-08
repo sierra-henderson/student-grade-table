@@ -8,7 +8,7 @@ class GradeTable {
     while (tBody.firstChild) {
       tBody.removeChild(tBody.firstChild);
     }
-    grades.forEach(el => this.renderGradeRow(el, this.deleteGrade))
+    grades.forEach(el => this.renderGradeRow(el, this.deleteGrade, this.handleUpdate))
     var noGrades = document.getElementById('noGrades')
     if (grades.length === 0) {
       noGrades.classList.remove('d-none');
@@ -19,7 +19,10 @@ class GradeTable {
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade
   }
-  renderGradeRow(data, deleteGrade) {
+  onUpdateClick(handleUpdate) {
+    this.handleUpdate = handleUpdate;
+  }
+  renderGradeRow(data, deleteGrade, handleUpdate) {
     var tBody = this.tableElement.querySelector('tbody');
     var td1 = document.createElement('td');
     td1.textContent = data.name;
@@ -28,15 +31,21 @@ class GradeTable {
     var td3 = document.createElement('td');
     td3.textContent = data.grade;
     var td4 = document.createElement('td');
-    var button = document.createElement('button');
-    button.textContent = 'DELETE';
-    button.className = 'btn btn-danger'
-    td4.append(button);
+    td4.setAttribute("id", "icon-right")
+    var updateIcon = document.createElement('i');
+    updateIcon.className = 'fas fa-edit text-info'
+    td4.append(updateIcon);
+    var deleteIcon = document.createElement('i');
+    deleteIcon.className = 'fas fa-trash text-danger'
+    td4.append(deleteIcon);
     var tr = document.createElement('tr');
     tr.append(td1, td2, td3, td4);
     tBody.append(tr);
-    button.addEventListener('click', function() {
+    deleteIcon.addEventListener('click', function() {
       deleteGrade(data.id)
+    });
+    updateIcon.addEventListener('click', function () {
+      handleUpdate(data)
     });
     return tr;
   }

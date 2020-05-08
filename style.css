@@ -12,12 +12,22 @@ h2, h3 {
   font-weight: 700;
 }
 
-.average h2 {
+.average h2,
+.table thead th:last-child {
+  text-align: right;
+}
+
+.fas.fa-edit.text-info {
+  padding-right: 20px;
+}
+
+.table td:last-child {
   text-align: right;
 }
 
 .table thead th {
   border-top: none;
+
 }
 
 @media only screen and (max-width: 991px) {
