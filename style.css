@@ -1,6 +1,6 @@
 header {
   margin: 20px 0;
-  padding-top: 30px;
+  padding: 25px 0;
 }
 
 .row {
@@ -18,4 +18,10 @@ h2, h3 {
 
 .table thead th {
   border-top: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .average h2, h1, h4 {
+    text-align: center;
+  }
 }
